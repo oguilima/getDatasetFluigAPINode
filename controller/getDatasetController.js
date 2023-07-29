@@ -36,14 +36,12 @@ module.exports = class getDatasetController {
                 
 
                 for(let p = 0; p < dsValues.length; p++){
-                    let arrValores = []
+                    let objValores = {}
                     for(let i = 0; i < dsValues[p].value.length; i++){
-                        arrValores.push({
-                            [colunas[i]]: dsValues[p].value[i]['$value']
-                        });
+                        objValores[[colunas[i]]] = dsValues[p].value[i]['$value']
                     }
 
-                    valores.push(arrValores)
+                    valores.push(objValores)
                 }
 
 
